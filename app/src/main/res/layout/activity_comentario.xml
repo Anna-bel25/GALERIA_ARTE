@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/estrellas"
+    tools:context=".ComentarioActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="213dp"
+                android:background="@drawable/protada2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lblTitulo2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="COMENTANOS..."
+                    android:textColor="@color/black"
+                    android:textSize="34sp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white2"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <Button
+                        android:id="@+id/cmdCancelar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/estrellas"
+                        android:onClick="cmdCancelar"
+                        android:text="Volver"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <LinearLayout
+                        android:layout_width="177dp"
+                        android:layout_height="142dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/lblPerfilUser"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Icono" />
+
+                        <TextView
+                            android:id="@+id/lblDescripcionIcono"
+                            android:layout_width="match_parent"
+                            android:layout_height="47dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:text="Este icono aparecerá en el comentario"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="italic" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <Button
+                            android:id="@+id/cmdCambiarIcono"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/botones_busqueda"
+                            android:text="Cambiar"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="26dp"
+                        android:layout_height="142dp"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="205dp"
+                            android:layout_height="145dp"
+                            android:src="@drawable/user1" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <TextView
+                        android:id="@+id/lblFecha"
+                        android:layout_width="63dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Fecha" />
+
+                    <EditText
+                        android:id="@+id/txtFecha"
+                        android:layout_width="201dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Seleccionar fecha"
+                        android:inputType="date"
+                        android:textColorHint="@color/white"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/cmdFecha"
+                        android:layout_width="33dp"
+                        android:layout_height="49dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/boton_comentar"
+                        android:onClick="cmdFecha"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/calendario" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <TextView
+                        android:id="@+id/lblNombre"
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Nombre" />
+
+                    <EditText
+                        android:id="@+id/txtNombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="11"
+                        android:hint="El apodo será único"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="132dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <TextView
+                        android:id="@+id/lblComentario"
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Comentario" />
+
+                    <EditText
+                        android:id="@+id/txtComentario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="105dp"
+                        android:layout_weight="1"
+                        android:ems="11"
+                        android:gravity="top|start"
+                        android:hint="Escribe tu comentario"
+                        android:inputType="text|textMultiLine"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="134dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <TextView
+                        android:id="@+id/lblValoracion"
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingVertical="30px"
+                        android:text="Valoracion" />
+
+                    <RatingBar
+                        android:id="@+id/rtValoracionNueva"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:numStars="5"
+                        android:progressTint="@color/estrellas" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <Button
+                        android:id="@+id/cmdConsultar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/estrellas"
+                        android:onClick="consultarComentario"
+                        android:text="Consultar"
+                        android:textColor="@color/black" />
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="49dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/cmdBorrar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/cabecera"
+                        android:onClick="cmdBorrar"
+                        android:text="Limpiar"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp" />
+
+                <View
+                    android:id="@+id/divider6"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/chkPoliticaSeguridad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/botones_busqueda"
+                            android:text="Acepta las políticas de seguridad de la aplicación"
+                            android:textColorHighlight="@color/estrellas"
+                            android:textColorLink="@color/white"
+                            app:checkedState="checked" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/cmdEnviar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/cabecera"
+                            android:onClick="cmdEnviar"
+                            android:text="Enviar"
+                            android:textColor="@color/black" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <Button
+                            android:id="@+id/cmdActualizar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/boton_comentar"
+                            android:onClick="actualizarComentario"
+                            android:text="Actualizar"
+                            android:textColor="@color/black" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <Button
+                            android:id="@+id/cmdEliminar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/boton_comentar"
+                            android:onClick="eliminarComentario"
+                            android:text="Eliminar"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#352E2E</color>
+    <color name="white">#AFAEAE</color>
+    <color name="white2">#FFFFFF</color>
+    <color name="cabecera">#D8BFD8</color>
+    <color name="botones_busqueda">#D0ECE7</color>
+    <color name="boton_comentar">#A2D9CE</color>
+    <color name="estrellas">#F9E79F</color>
+    <color name="foro_cabecera">#241C15</color>
+</resources>
