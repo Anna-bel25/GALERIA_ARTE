@@ -30,7 +30,7 @@ import java.io.OutputStreamWriter;
 import java.util.Calendar;
 
 public class ComentarioActivity extends AppCompatActivity {
-
+    private SQLiteDatabase database;
     private ImageView imageViewIcono;
     private Button btnCambiarIcono;
     private int[] imagenesIcono = {
@@ -56,6 +56,35 @@ public class ComentarioActivity extends AppCompatActivity {
                 cambiarIcono();
             }
         });
+
+
+        // Inicializa la instancia de la base de datos
+        BaseDatosComentario dbHelper = new BaseDatosComentario(this);
+        database = dbHelper.getWritableDatabase();
+
+        // Configura el botón para realizar la eliminación directamente
+        Button btnEliminar = findViewById(R.id.cmdEliminar);
+        btnEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Reemplaza el 9 con el ID del registro que se desea eliminar
+                Toast.makeText(v.getContext(), "Se ha eliminado el registrado correctamente", Toast.LENGTH_SHORT).show();
+                eliminarRegistroDirectamente(9);
+            }
+        });
+
+
+    }
+    // Método para eliminar un registro por ID directamente
+    private void eliminarRegistroDirectamente(int id) {
+        try {
+            String whereClause = "id = ?";
+            String[] whereArgs = {String.valueOf(id)};
+            database.delete("comentario", whereClause, whereArgs);
+            Log.d("MiActividad", "Registro eliminado exitosamente");
+        } catch (Exception e) {
+            Log.e("MiActividad", "Error al eliminar el registro", e);
+        }
     }
 
     private void cambiarIcono() {
