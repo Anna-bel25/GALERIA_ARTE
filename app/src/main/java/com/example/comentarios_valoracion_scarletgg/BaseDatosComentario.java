@@ -14,6 +14,12 @@ public class BaseDatosComentario extends SQLiteOpenHelper {
 
     private static final int db_version = 1;
 
+    // Método para eliminar un registro por ID de forma rápida
+    public void eliminarRegistroRapido(int id) {
+        getWritableDatabase().delete(tabla_comentario, "id = ?", new String[]{String.valueOf(id)});
+    }
+
+
     public BaseDatosComentario (Context c) {
         super (c, db_name, null, db_version);
     }

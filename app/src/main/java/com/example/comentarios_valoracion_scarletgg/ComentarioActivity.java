@@ -30,7 +30,7 @@ import java.io.OutputStreamWriter;
 import java.util.Calendar;
 
 public class ComentarioActivity extends AppCompatActivity {
-
+    private SQLiteDatabase database;
     private ImageView imageViewIcono;
     private Button btnCambiarIcono;
     private int[] imagenesIcono = {
@@ -56,6 +56,35 @@ public class ComentarioActivity extends AppCompatActivity {
                 cambiarIcono();
             }
         });
+
+
+        // Inicializa la instancia de la base de datos
+        BaseDatosComentario dbHelper = new BaseDatosComentario(this);
+        database = dbHelper.getWritableDatabase();
+
+        // Configura el botón para realizar la eliminación directamente
+        /*Button btnEliminar = findViewById(R.id.cmdEliminar);
+        btnEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Reemplaza el 9 con el ID del registro que se desea eliminar
+                Toast.makeText(v.getContext(), "Se ha eliminado el comentario correctamente", Toast.LENGTH_SHORT).show();
+                eliminarRegistroDirectamente(9);
+            }
+        });*/
+
+
+    }
+    // Método para eliminar un registro por ID directamente
+    private void eliminarRegistroDirectamente(int id) {
+        try {
+            String whereClause = "id = ?";
+            String[] whereArgs = {String.valueOf(id)};
+            database.delete("comentario", whereClause, whereArgs);
+            Log.d("MiActividad", "Comentario eliminado exitosamente");
+        } catch (Exception e) {
+            Log.e("MiActividad", "Error al eliminar el comentario", e);
+        }
     }
 
     private void cambiarIcono() {
@@ -280,10 +309,10 @@ public class ComentarioActivity extends AppCompatActivity {
             int rowsAffected = sqlBD.delete("comentario", "nombre = ?", new String[]{nombre_o.getText().toString()});
 
             if (rowsAffected > 0) {
-                Toast.makeText(this, "Registro eliminado correctamente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Comentario eliminado correctamente", Toast.LENGTH_SHORT).show();
                 limpiarCampos(); // Opcional: limpiar los campos después de eliminar
             } else {
-                Toast.makeText(this, "Error al eliminar el registro", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Error al eliminar el comentario", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -294,10 +323,15 @@ public class ComentarioActivity extends AppCompatActivity {
     // Método opcional para limpiar los campos después de eliminar
     private void limpiarCampos() {
         EditText nombre_o = findViewById(R.id.txtNombre);
+        EditText fecha_o = findViewById(R.id.txtFecha);
+        EditText comentario_o = findViewById(R.id.txtComentario);
         RatingBar ratingB_t = findViewById(R.id.rtValoracionNueva);
 
         nombre_o.setText("");
+        fecha_o.setText("");
+        comentario_o.setText("");
         ratingB_t.setRating(0);
+
         findViewById(R.id.cmdActualizar).setEnabled(false);
         findViewById(R.id.cmdEliminar).setEnabled(false);
     }
