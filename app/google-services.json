@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "529981429736",
+    "firebase_url": "https://comentariosvaloracionessgg-default-rtdb.firebaseio.com",
+    "project_id": "comentariosvaloracionessgg",
+    "storage_bucket": "comentariosvaloracionessgg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529981429736:android:33aa8189a060a25770765d",
+        "android_client_info": {
+          "package_name": "com.example.comentarios_valoracion_scarletgg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRlZvNs7GehqkBqGHzmTIwckkOHBOnLV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
