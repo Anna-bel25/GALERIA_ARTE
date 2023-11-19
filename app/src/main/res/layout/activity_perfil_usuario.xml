@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -179,7 +178,7 @@
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintStart_toStartOf="parent"
                                         app:layout_constraintTop_toTopOf="parent"
-                                        app:srcCompat="@drawable/settings" />
+                                        app:srcCompat="@drawable/estadisticas" />
 
                                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -190,7 +189,7 @@
                                     android:layout_margin="8dp"
                                     android:fontFamily="@font/roboto_medium"
                                     android:gravity="center"
-                                    android:text="Mis Reseñas"
+                                    android:text="Estadisticas"
                                     android:textColor="#020202"
                                     android:textSize="13dp" />
                             </LinearLayout>
@@ -250,16 +249,25 @@
 
                             <TextView
                                 android:id="@+id/textView18"
-                                android:layout_width="250dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:text="Contraseña"
                                 android:textSize="18dp"
                                 android:textStyle="bold" />
 
+                            <EditText
+                                android:id="@+id/edittext_contra"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="textPassword" />
+
                             <ImageView
                                 android:id="@+id/imageView14"
-                                android:layout_width="30dp"
-                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical|end"
                                 android:layout_weight="1"
                                 android:textAlignment="viewEnd"
                                 app:srcCompat="@drawable/editar" />
@@ -284,16 +292,25 @@
 
                             <TextView
                                 android:id="@+id/txtView_telefono"
-                                android:layout_width="250dp"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:text="Telefono"
                                 android:textSize="18dp"
                                 android:textStyle="bold" />
 
+                            <EditText
+                                android:id="@+id/editTextNumber"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="number" />
+
                             <ImageView
                                 android:id="@+id/imgView_telefono"
-                                android:layout_width="30dp"
-                                android:layout_height="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical|end"
                                 android:layout_weight="1"
                                 android:textAlignment="viewEnd"
                                 app:srcCompat="@drawable/telefono" />
