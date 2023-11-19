@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/estrellas"
+    android:backgroundTint="@color/boton"
     tools:context=".ComentarioActivity">
 
     <ScrollView
@@ -15,6 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/fondo_comentar"
             android:orientation="vertical">
 
             <LinearLayout
@@ -28,11 +29,12 @@
                     android:id="@+id/lblTitulo2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/aclonica"
                     android:gravity="center"
                     android:text="COMENTANOS..."
                     android:textColor="@color/black"
                     android:textSize="34sp"
-                    android:textStyle="bold|italic" />
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -48,7 +50,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white2"
+                    android:background="@color/fondo_comentar"
                     android:orientation="horizontal"
                     android:paddingHorizontal="40px"
                     android:paddingVertical="30px">
@@ -57,10 +59,11 @@
                         android:id="@+id/cmdCancelar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/estrellas"
+                        android:backgroundTint="@color/botones_busqueda"
+                        android:fontFamily="@font/aclonica"
                         android:onClick="cmdCancelar"
                         android:text="Volver"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/white2" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -106,9 +109,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="@color/botones_busqueda"
+                            android:backgroundTint="@color/boton"
+                            android:fontFamily="@font/aclonica"
                             android:text="Cambiar"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/white2" />
                     </LinearLayout>
 
                     <Space
@@ -260,10 +264,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/estrellas"
+                        android:backgroundTint="@color/boton"
+                        android:fontFamily="@font/aclonica"
                         android:onClick="consultarComentario"
                         android:text="Consultar"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/white2" />
 
                     <Space
                         android:layout_width="wrap_content"
@@ -275,10 +280,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/boton_comentar"
+                        android:backgroundTint="@color/boton"
+                        android:fontFamily="@font/aclonica"
                         android:onClick="cmdBorrar"
                         android:text="Limpiar"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/white2" />
                 </LinearLayout>
 
                 <Space
@@ -297,10 +303,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/cabecera"
+                        android:backgroundTint="@color/botones_busqueda"
+                        android:fontFamily="@font/aclonica"
                         android:onClick="cmdGuardarFirebase"
                         android:text="Guardar Firebase"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white2"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -351,10 +358,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="@color/cabecera"
+                            android:backgroundTint="@color/botones_busqueda"
+                            android:fontFamily="@font/aclonica"
                             android:onClick="cmdEnviar"
                             android:text="Enviar"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/white2" />
 
                         <Space
                             android:layout_width="wrap_content"
@@ -366,10 +374,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="@color/boton_comentar"
+                            android:backgroundTint="@color/boton"
+                            android:fontFamily="@font/aclonica"
                             android:onClick="actualizarComentario"
                             android:text="Actualizar"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/white2" />
 
                         <Space
                             android:layout_width="wrap_content"
@@ -381,10 +390,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="@color/boton_comentar"
+                            android:backgroundTint="@color/boton"
+                            android:fontFamily="@font/aclonica"
                             android:onClick="eliminarComentario"
                             android:text="Eliminar"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/white2" />
 
                     </LinearLayout>
 

@@ -13,557 +13,566 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/fondo_comentar"
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="171dp"
+                android:background="@drawable/portada"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lblTitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="FORO"
+                    android:textColor="@color/black"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingHorizontal="40px"
+                android:paddingVertical="30px">
+
+                <Button
+                    android:id="@+id/cmdRecientes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/boton"
+                    android:fontFamily="@font/aclonica"
+                    android:onClick="cmdRecientes"
+                    android:text="Recientes"
+                    android:textColor="@color/white2"
+                    android:textSize="12sp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="46dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/cmdMasValorados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/boton"
+                    android:fontFamily="@font/aclonica"
+                    android:onClick="cmdRMasValorados"
+                    android:text="Más Valorados"
+                    android:textColor="@color/white2"
+                    android:textSize="12sp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/cmdTodo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/boton"
+                    android:fontFamily="@font/aclonica"
+                    android:onClick="cmdTodo"
+                    android:text="Todos"
+                    android:textColor="@color/white2"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyComentarios"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/lyComentario1"
                     android:layout_width="match_parent"
-                    android:layout_height="171dp"
-                    android:background="@drawable/portada"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/lblTitulo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="FORO"
-                        android:textColor="@color/black"
-                        android:textSize="34sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
                     android:paddingHorizontal="40px"
                     android:paddingVertical="30px">
 
-                    <Button
-                        android:id="@+id/cmdRecientes"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/botones_busqueda"
-                        android:onClick="cmdRecientes"
-                        android:text="Recientes"
-                        android:textColor="@color/black" />
-
-                    <Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="46dp"
-                        android:layout_weight="1" />
-
-                    <Button
-                        android:id="@+id/cmdMasValorados"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/botones_busqueda"
-                        android:onClick="cmdRMasValorados"
-                        android:text="Más Valorados"
-                        android:textColor="@color/black" />
-
-                    <Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
-                    <Button
-                        android:id="@+id/cmdTodo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/botones_busqueda"
-                        android:onClick="cmdTodo"
-                        android:text="Todos"
-                        android:textColor="@color/black" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/lyComentarios"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:id="@+id/lyComentario1"
+                    <TextView
+                        android:id="@+id/lblFecha1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical"
+                        android:gravity="end"
                         android:paddingHorizontal="40px"
-                        android:paddingVertical="30px">
+                        android:text="22/10/23"
+                        android:textColor="@color/white" />
 
-                        <TextView
-                            android:id="@+id/lblFecha1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="68dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:gravity="end"
-                            android:paddingHorizontal="40px"
-                            android:text="22/10/23"
-                            android:textColor="@color/white" />
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblUser1"
+                                android:layout_width="75dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="User" />
+
+                            <ImageView
+                                android:id="@+id/imageView1"
+                                android:layout_width="77dp"
+                                android:layout_height="11dp"
+                                android:layout_weight="1"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/user5" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="297dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblComentario1"
+                                android:layout_width="280dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
+
+                            <RatingBar
+                                android:id="@+id/rtStars1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="@color/estrellas"
+                                android:rating="2.5" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider10"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:id="@+id/lyComentario2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <TextView
+                        android:id="@+id/lblFecha2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:paddingHorizontal="40px"
+                        android:text="21/10/23"
+                        android:textColor="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1">
+                            android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="68dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/lblUser1"
-                                    android:layout_width="75dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:text="User" />
-
-                                <ImageView
-                                    android:id="@+id/imageView1"
-                                    android:layout_width="77dp"
-                                    android:layout_height="11dp"
-                                    android:layout_weight="1"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/user5" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="297dp"
-                                android:layout_height="wrap_content"
+                            <TextView
+                                android:id="@+id/lblUser2"
+                                android:layout_width="match_parent"
+                                android:layout_height="51dp"
                                 android:gravity="center"
-                                android:orientation="vertical">
+                                android:text="User" />
 
-                                <TextView
-                                    android:id="@+id/lblComentario1"
-                                    android:layout_width="280dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
-
-                                <RatingBar
-                                    android:id="@+id/rtStars1"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:isIndicator="true"
-                                    android:numStars="5"
-                                    android:progressTint="@color/estrellas"
-                                    android:rating="2.5" />
-
-                            </LinearLayout>
+                            <ImageView
+                                android:id="@+id/imageView3"
+                                android:layout_width="77dp"
+                                android:layout_height="58dp"
+                                android:src="@drawable/user2"
+                                android:visibility="visible" />
                         </LinearLayout>
-
-                    </LinearLayout>
-
-                    <View
-                        android:id="@+id/divider10"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_weight="1"
-                        android:background="?android:attr/listDivider" />
-
-                    <LinearLayout
-                        android:id="@+id/lyComentario2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="40px"
-                        android:paddingVertical="30px">
-
-                        <TextView
-                            android:id="@+id/lblFecha2"
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:gravity="end"
-                            android:paddingHorizontal="40px"
-                            android:text="21/10/23"
-                            android:textColor="@color/white" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                            <LinearLayout
+                            <TextView
+                                android:id="@+id/lblComentario2"
+                                android:layout_width="285dp"
+                                android:layout_height="wrap_content"
+                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
+
+                            <RatingBar
+                                android:id="@+id/rtStars2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="@color/estrellas"
+                                android:rating="4" />
 
-                                <TextView
-                                    android:id="@+id/lblUser2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="51dp"
-                                    android:gravity="center"
-                                    android:text="User" />
-
-                                <ImageView
-                                    android:id="@+id/imageView3"
-                                    android:layout_width="77dp"
-                                    android:layout_height="58dp"
-                                    android:src="@drawable/user2"
-                                    android:visibility="visible" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/lblComentario2"
-                                    android:layout_width="285dp"
-                                    android:layout_height="wrap_content"
-                                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
-
-                                <RatingBar
-                                    android:id="@+id/rtStars2"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:isIndicator="true"
-                                    android:numStars="5"
-                                    android:progressTint="@color/estrellas"
-                                    android:rating="4" />
-
-                            </LinearLayout>
                         </LinearLayout>
-
                     </LinearLayout>
-
-                    <View
-                        android:id="@+id/divider"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_weight="1"
-                        android:background="?android:attr/listDivider" />
-
-                    <LinearLayout
-                        android:id="@+id/lyComentario3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="40px"
-                        android:paddingVertical="30px">
-
-                        <TextView
-                            android:id="@+id/lblFecha3"
-                            android:layout_width="match_parent"
-                            android:layout_height="42dp"
-                            android:layout_weight="1"
-                            android:gravity="end"
-                            android:text="20/9/23"
-                            android:textColor="@color/white" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="106dp"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/lblUser3"
-                                    android:layout_width="75dp"
-                                    android:layout_height="47dp"
-                                    android:gravity="center"
-                                    android:text="User" />
-
-                                <ImageView
-                                    android:id="@+id/imageView4"
-                                    android:layout_width="77dp"
-                                    android:layout_height="44dp"
-                                    android:src="@drawable/user3"
-                                    android:visibility="visible" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/lblComentario3"
-                                    android:layout_width="287dp"
-                                    android:layout_height="wrap_content"
-                                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
-
-                                <RatingBar
-                                    android:id="@+id/rtStars3"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:isIndicator="true"
-                                    android:numStars="5"
-                                    android:progressTint="@color/estrellas"
-                                    android:rating="3.5" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <View
-                        android:id="@+id/divider2"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_weight="1"
-                        android:background="?android:attr/listDivider" />
-
-                    <LinearLayout
-                        android:id="@+id/lyComentario4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="40px"
-                        android:paddingVertical="30px">
-
-                        <TextView
-                            android:id="@+id/lblFecha4"
-                            android:layout_width="match_parent"
-                            android:layout_height="43dp"
-                            android:layout_weight="1"
-                            android:gravity="end"
-                            android:text="15/9/23"
-                            android:textColor="@color/white" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/lblUser4"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="51dp"
-                                    android:gravity="center"
-                                    android:text="User" />
-
-                                <ImageView
-                                    android:id="@+id/imageView5"
-                                    android:layout_width="77dp"
-                                    android:layout_height="58dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/user1"
-                                    android:visibility="visible" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/lblComentario4"
-                                    android:layout_width="286dp"
-                                    android:layout_height="wrap_content"
-                                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
-
-                                <RatingBar
-                                    android:id="@+id/rtStars4"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:isIndicator="true"
-                                    android:numStars="5"
-                                    android:progressTint="@color/estrellas"
-                                    android:rating="2" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <View
-                        android:id="@+id/divider3"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_weight="1"
-                        android:background="?android:attr/listDivider" />
-
-                    <LinearLayout
-                        android:id="@+id/lyComentario5"
-                        android:layout_width="match_parent"
-                        android:layout_height="141dp"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="40px"
-                        android:paddingVertical="30px">
-
-                        <TextView
-                            android:id="@+id/lblFecha5"
-                            android:layout_width="match_parent"
-                            android:layout_height="38dp"
-                            android:layout_weight="1"
-                            android:gravity="end"
-                            android:text="19/10/23"
-                            android:textColor="@color/white" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/lblUser5"
-                                    android:layout_width="75dp"
-                                    android:layout_height="52dp"
-                                    android:gravity="center"
-                                    android:text="User" />
-
-                                <ImageView
-                                    android:id="@+id/imageView6"
-                                    android:layout_width="77dp"
-                                    android:layout_height="48dp"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/user4"
-                                    android:visibility="visible" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="102dp"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/lblComentario5"
-                                    android:layout_width="286dp"
-                                    android:layout_height="wrap_content"
-                                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
-
-                                <RatingBar
-                                    android:id="@+id/rtStars5"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:isIndicator="true"
-                                    android:numStars="5"
-                                    android:progressTint="@color/estrellas"
-                                    android:rating="4" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <View
-                        android:id="@+id/divider4"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_weight="1"
-                        android:background="?android:attr/listDivider" />
-
-                    <LinearLayout
-                        android:id="@+id/lyComentario6"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="40px"
-                        android:paddingVertical="30px">
-
-                        <TextView
-                            android:id="@+id/lblFecha6"
-                            android:layout_width="match_parent"
-                            android:layout_height="36dp"
-                            android:layout_weight="1"
-                            android:gravity="end"
-                            android:text="17/9/23"
-                            android:textColor="@color/white" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/lblUser6"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="51dp"
-                                    android:gravity="center"
-                                    android:text="User" />
-
-                                <ImageView
-                                    android:id="@+id/imageView7"
-                                    android:layout_width="77dp"
-                                    android:layout_height="58dp"
-                                    android:src="@drawable/user3"
-                                    android:visibility="visible" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/lblComentario6"
-                                    android:layout_width="280dp"
-                                    android:layout_height="wrap_content"
-                                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
-
-                                <RatingBar
-                                    android:id="@+id/rtStars6"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:isIndicator="true"
-                                    android:numStars="5"
-                                    android:progressTint="@color/estrellas"
-                                    android:rating="3.5" />
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="144dp" />
 
                 </LinearLayout>
 
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:id="@+id/lyComentario3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <TextView
+                        android:id="@+id/lblFecha3"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="20/9/23"
+                        android:textColor="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="106dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblUser3"
+                                android:layout_width="75dp"
+                                android:layout_height="47dp"
+                                android:gravity="center"
+                                android:text="User" />
+
+                            <ImageView
+                                android:id="@+id/imageView4"
+                                android:layout_width="77dp"
+                                android:layout_height="44dp"
+                                android:src="@drawable/user3"
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblComentario3"
+                                android:layout_width="287dp"
+                                android:layout_height="wrap_content"
+                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
+
+                            <RatingBar
+                                android:id="@+id/rtStars3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="@color/estrellas"
+                                android:rating="3.5" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:id="@+id/lyComentario4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <TextView
+                        android:id="@+id/lblFecha4"
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="15/9/23"
+                        android:textColor="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblUser4"
+                                android:layout_width="match_parent"
+                                android:layout_height="51dp"
+                                android:gravity="center"
+                                android:text="User" />
+
+                            <ImageView
+                                android:id="@+id/imageView5"
+                                android:layout_width="77dp"
+                                android:layout_height="58dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/user1"
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblComentario4"
+                                android:layout_width="286dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/aclonica"
+                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
+
+                            <RatingBar
+                                android:id="@+id/rtStars4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="@color/estrellas"
+                                android:rating="2" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:id="@+id/lyComentario5"
+                    android:layout_width="match_parent"
+                    android:layout_height="141dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <TextView
+                        android:id="@+id/lblFecha5"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="19/10/23"
+                        android:textColor="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblUser5"
+                                android:layout_width="75dp"
+                                android:layout_height="52dp"
+                                android:gravity="center"
+                                android:text="User" />
+
+                            <ImageView
+                                android:id="@+id/imageView6"
+                                android:layout_width="77dp"
+                                android:layout_height="48dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/user4"
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="102dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblComentario5"
+                                android:layout_width="286dp"
+                                android:layout_height="wrap_content"
+                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
+
+                            <RatingBar
+                                android:id="@+id/rtStars5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="@color/estrellas"
+                                android:rating="4" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:id="@+id/lyComentario6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="40px"
+                    android:paddingVertical="30px">
+
+                    <TextView
+                        android:id="@+id/lblFecha6"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="17/9/23"
+                        android:textColor="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblUser6"
+                                android:layout_width="match_parent"
+                                android:layout_height="51dp"
+                                android:gravity="center"
+                                android:text="User" />
+
+                            <ImageView
+                                android:id="@+id/imageView7"
+                                android:layout_width="77dp"
+                                android:layout_height="58dp"
+                                android:src="@drawable/user3"
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lblComentario6"
+                                android:layout_width="280dp"
+                                android:layout_height="wrap_content"
+                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
+
+                            <RatingBar
+                                android:id="@+id/rtStars6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="@color/estrellas"
+                                android:rating="3.5" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="144dp" />
 
             </LinearLayout>
+
+
+        </LinearLayout>
 
 
     </ScrollView>
@@ -588,7 +597,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="82dp"
-            android:background="@color/white2"
+            android:background="@color/fondo_comentar"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingHorizontal="40px"
@@ -599,11 +608,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/boton_comentar"
+                android:backgroundTint="@color/botones_busqueda"
                 android:elevation="2dp"
+                android:fontFamily="@font/aclonica"
                 android:onClick="NuevoComentario"
                 android:text="Comentar"
-                android:textColor="@color/black" />
+                android:textColor="@color/white2" />
         </LinearLayout>
     </LinearLayout>
 

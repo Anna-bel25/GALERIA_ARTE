@@ -3,9 +3,13 @@
     <color name="black">#352E2E</color>
     <color name="white">#AFAEAE</color>
     <color name="white2">#FFFFFF</color>
-    <color name="cabecera">#D8BFD8</color>
-    <color name="botones_busqueda">#D0ECE7</color>
-    <color name="boton_comentar">#A2D9CE</color>
-    <color name="estrellas">#F9E79F</color>
+    <color name="fondo_comentar">#8BF1E3DC</color>
+    <color name="cabecera">#5900FF7C</color>
+    <color name="botones_busqueda">#4E3C3C</color>
+    <color name="boton_comentar">#8507B695</color>
+    <color name="boton">#C58686</color>
+    <color name="estrellas">#FFCD00</color>
     <color name="foro_cabecera">#241C15</color>
+
+
 </resources>

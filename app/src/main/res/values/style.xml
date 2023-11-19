@@ -3,9 +3,10 @@
     <style name="SmallRatingBar">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">20sp</item> <!-- Ajusta el tamaño del texto de las estrellas -->
+        <item name="android:textSize">20sp</item>
     </style>
 
-    <dimen name="smallRatingBarSize">20dp</dimen> <!-- Ajusta el tamaño de las estrellas -->
+    <dimen name="smallRatingBarSize">20dp</dimen>
+
 
 </resources>
