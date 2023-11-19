@@ -251,17 +251,17 @@
                                 android:id="@+id/textView18"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="Contraseña"
+                                android:text="Usuario"
                                 android:textSize="18dp"
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/edittext_contra"
+                                android:id="@+id/edittext_usuario_perfil"
                                 android:layout_width="70dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:ems="10"
-                                android:inputType="textPassword" />
+                                android:inputType="text" />
 
                             <ImageView
                                 android:id="@+id/imageView14"
@@ -294,17 +294,17 @@
                                 android:id="@+id/txtView_telefono"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:text="Telefono"
+                                android:text="Contraseña"
                                 android:textSize="18dp"
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/editTextNumber"
+                                android:id="@+id/edittext_contra_perfil"
                                 android:layout_width="70dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:ems="10"
-                                android:inputType="number" />
+                                android:inputType="textPassword" />
 
                             <ImageView
                                 android:id="@+id/imgView_telefono"
@@ -313,7 +313,7 @@
                                 android:layout_gravity="center_vertical|end"
                                 android:layout_weight="1"
                                 android:textAlignment="viewEnd"
-                                app:srcCompat="@drawable/telefono" />
+                                app:srcCompat="@drawable/editar" />
 
                         </LinearLayout>
                     </LinearLayout>
