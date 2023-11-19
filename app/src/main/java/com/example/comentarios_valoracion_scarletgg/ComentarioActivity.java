@@ -1,5 +1,6 @@
 package com.example.comentarios_valoracion_scarletgg;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -24,6 +25,12 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
@@ -31,6 +38,7 @@ import java.util.Calendar;
 
 public class ComentarioActivity extends AppCompatActivity {
 
+    DatabaseReference ComentarioValoraciones;
     private ImageView imageViewIcono;
     private Button btnCambiarIcono;
     private int[] imagenesIcono = {
@@ -46,6 +54,28 @@ public class ComentarioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comentario);
 
+        EditText fecha_tnp = findViewById(R.id.txtFecha);
+        EditText nombre_tnp = findViewById(R.id.txtNombre);
+        EditText comentario_tnp = findViewById(R.id.txtComentario);
+        RatingBar valoracion_tnp = findViewById(R.id.rtValoracionNueva);
+
+        ComentarioValoraciones = FirebaseDatabase.getInstance().getReference().child("Foro");
+        ComentarioValoraciones.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                fecha_tnp.setText(dataSnapshot.child("fecha").getValue().toString());
+                nombre_tnp.setText(dataSnapshot.child("nombre").getValue().toString());
+                comentario_tnp.setText(dataSnapshot.child("comentario").getValue().toString());
+                float valorCalificacion = Float.parseFloat(dataSnapshot.child("valoracion").getValue().toString());
+                valoracion_tnp.setRating(valorCalificacion);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("Firebase", "Error al intentar guardar los datos", error.toException());
+            }
+        });
+
         imageViewIcono = findViewById(R.id.imageView);
         btnCambiarIcono = findViewById(R.id.cmdCambiarIcono);
 
@@ -56,6 +86,20 @@ public class ComentarioActivity extends AppCompatActivity {
                 cambiarIcono();
             }
         });
+    }
+
+    public void cmdGuardarFirebase(View v) {
+        EditText fecha_tnp = findViewById(R.id.txtFecha);
+        EditText nombre_tnp = findViewById(R.id.txtNombre);
+        EditText comentario_tnp = findViewById(R.id.txtComentario);
+        RatingBar valoracion_tnp = findViewById(R.id.rtValoracionNueva);
+        //Se crea un hijo de Foro, llamdo Foro con todas las demas ramas; fecha, nombre, comentario y valoracion
+        //ComentarioValoraciones.child("Foro").child("fecha").setValue(fecha_tnp.getText().toString());
+        ComentarioValoraciones.child("fecha").setValue(fecha_tnp.getText().toString());
+        ComentarioValoraciones.child("nombre").setValue(nombre_tnp.getText().toString());
+        ComentarioValoraciones.child("comentario").setValue(comentario_tnp.getText().toString());
+        ComentarioValoraciones.child("valoracion").setValue(String.valueOf(valoracion_tnp.getRating()));
+
     }
 
     private void cambiarIcono() {
