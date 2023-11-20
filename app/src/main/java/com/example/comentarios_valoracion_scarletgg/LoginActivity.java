@@ -40,14 +40,28 @@ public class LoginActivity extends AppCompatActivity {
         // ----------------------------------------------
     }
 
+    /*// Verificar las credenciales
+        if (cuentaDB.verificarCredenciales(usuario, contraseña)) {
+        // Obtener la cuenta correspondiente
+        CuentaLogin usuarioActual = cuentaDB.obtenerCuentaPorCredenciales(usuario, contraseña);
+
+        // Pasar a la siguiente actividad con la cuenta
+        Intent intent = new Intent(this, SiguienteActividad.class);
+        intent.putExtra("cuenta", usuarioActual);
+        startActivity(intent);
+    }*/
 
     public void iniciarSesion(View view) {
         String usuario = var_usuario.getText().toString();
         String contraseña = var_password.getText().toString();
 
         if (cuentaDB.verificarCredenciales(usuario, contraseña)) {
+            // Obtener la cuenta correspondiente
+            CuentaLogin usuarioActual = cuentaDB.obtenerCuentaPorCredenciales(usuario, contraseña);
             // Las credenciales son correctas, puedes redirigir a la siguiente actividad
             Intent intent = new Intent(this, Perfil_UsuarioActivity.class);
+            intent.putExtra("usuario", usuarioActual.getUsuario());
+            intent.putExtra("contraseña", usuarioActual.getContraseña());
             startActivity(intent);
             finish(); // Finaliza la actividad de login para que no se pueda volver atrás
         } else {
@@ -55,6 +69,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
         }
     }
+
 
 
 }
