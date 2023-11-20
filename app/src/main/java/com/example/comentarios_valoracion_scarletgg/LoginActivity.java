@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (cuentaDB.verificarCredenciales(usuario, contraseña)) {
             // Las credenciales son correctas, puedes redirigir a la siguiente actividad
-            Intent intent = new Intent(this, Principal_galeria.class);
+            Intent intent = new Intent(this, Perfil_UsuarioActivity.class);
             startActivity(intent);
             finish(); // Finaliza la actividad de login para que no se pueda volver atrás
         } else {

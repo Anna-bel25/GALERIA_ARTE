@@ -4,11 +4,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
 import com.example.comentarios_valoracion_scarletgg.CuentaLogin;
 
 
 import androidx.annotation.Nullable;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class CuentaDB extends SQLiteOpenHelper {
@@ -61,6 +64,34 @@ public class CuentaDB extends SQLiteOpenHelper {
         return credencialesCorrectas;
     }
 
+    // verifica las credenciales en la base de datos
+    public CuentaLogin obtenerCuentaPorCredenciales(String usuario, String contraseña) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {"id", "usuario", "contraseña"};
+        String selection = "usuario = ? AND contraseña = ?";
+        String[] selectionArgs = {usuario, contraseña};
+        Cursor cursor = db.query("Cuentas", columns, selection, selectionArgs, null, null, null);
+
+        CuentaLogin cuenta = null;
+
+        Log.d("CuentaDB", "Query: " + selection + ", Args: " + Arrays.toString(selectionArgs));
+
+        if (cursor.moveToFirst()) {
+            cuenta = new CuentaLogin();
+            cuenta.setId(cursor.getInt(cursor.getColumnIndex("id")));
+            cuenta.setUsuario(cursor.getString(cursor.getColumnIndex("usuario")));
+            cuenta.setContraseña(cursor.getString(cursor.getColumnIndex("contraseña")));
+
+            Log.d("CuentaDB", "Usuario encontrado: " + cuenta.getUsuario());
+        } else {
+            Log.d("CuentaDB", "Usuario no encontrado");
+        }
+
+        cursor.close();
+
+        return cuenta;
+    }
+
 
     // Método para obtener el usuario actual
     public CuentaLogin obtenerUsuarioActual() {
@@ -75,11 +106,40 @@ public class CuentaDB extends SQLiteOpenHelper {
             cuenta.setId(cursor.getInt(cursor.getColumnIndex("id")));
             cuenta.setUsuario(cursor.getString(cursor.getColumnIndex("usuario")));
             cuenta.setContraseña(cursor.getString(cursor.getColumnIndex("contraseña")));
+        }else {
+            Log.e("CuentaDB", "No se encontró ningún usuario en la base de datos");
         }
 
         cursor.close();
 
         return cuenta;
+    }
+
+    // Método para actualizar la cuenta en la base de datos
+   /* public int actualizarCuenta(CuentaLogin cuenta) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("usuario", cuenta.getUsuario());
+        values.put("contraseña", cuenta.getContraseña());
+
+        // Actualizar la fila en la tabla
+        return db.update("Cuentas", values, "id = ?", new String[]{String.valueOf(cuenta.getId())});
+    }*/
+
+    public int actualizarCuenta(CuentaLogin cuenta) {
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("usuario", cuenta.getUsuario());
+            values.put("contraseña", cuenta.getContraseña());
+
+            // Actualizar la fila en la tabla
+            return db.update("Cuentas", values, "id = ?", new String[]{String.valueOf(cuenta.getId())});
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("CuentaDB", "Excepción al actualizar cuenta", e);
+            return -1; // O algún otro valor que indique un error
+        }
     }
 
 }

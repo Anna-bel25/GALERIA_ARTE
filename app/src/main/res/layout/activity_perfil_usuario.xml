@@ -116,7 +116,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
-                                android:layout_weight="0.3333"
+                                android:layout_weight="0.32"
                                 android:background="@drawable/grey_background"
                                 android:elevation="5dp"
                                 android:orientation="vertical">
@@ -157,7 +157,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
-                                android:layout_weight="0.3333"
+                                android:layout_weight="0.32"
                                 android:background="@drawable/grey_background"
                                 android:elevation="5dp"
                                 android:orientation="vertical">
@@ -198,7 +198,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="10dp"
-                                android:layout_weight="0.3333"
+                                android:layout_weight="0.32"
                                 android:background="@drawable/grey_background"
                                 android:elevation="5dp"
                                 android:orientation="vertical">
@@ -261,14 +261,16 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:ems="10"
+                                android:enabled="false"
                                 android:inputType="text" />
 
                             <ImageView
-                                android:id="@+id/imageView14"
+                                android:id="@+id/imgView_editar_1"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"
                                 android:layout_gravity="center_vertical|end"
                                 android:layout_weight="1"
+                                android:clickable="true"
                                 android:textAlignment="viewEnd"
                                 app:srcCompat="@drawable/editar" />
 
@@ -304,15 +306,17 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:ems="10"
+                                android:enabled="false"
                                 android:inputType="textPassword" />
 
                             <ImageView
-                                android:id="@+id/imgView_telefono"
+                                android:id="@+id/imgView_editar_2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"
                                 android:layout_gravity="center_vertical|end"
                                 android:layout_weight="1"
-                                android:textAlignment="viewEnd"
+                                android:textAlignment ="viewEnd"
+                                android:clickable="true"
                                 app:srcCompat="@drawable/editar" />
 
                         </LinearLayout>
@@ -321,7 +325,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/btn_editar_perfil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="24dp"
