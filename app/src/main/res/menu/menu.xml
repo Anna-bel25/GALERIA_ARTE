@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_home_24"
+        android:iconTint="#FFFFFF"
+        android:title="Home" />
+    <item
+        android:id="@+id/galeria"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:icon="@drawable/baseline_color_lens_24"
+        android:title="Galeria" />
+    <item
+        android:id="@+id/foro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:icon="@drawable/baseline_mode_comment_24"
+        android:title="Acerca de" />
+</menu>

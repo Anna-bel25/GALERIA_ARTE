@@ -254,68 +254,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="36dp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="224dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView13"
-                            android:layout_width="310dp"
-                            android:layout_height="240dp"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/user5" />
-
-                    </LinearLayout>
-
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="18dp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="130px">
-
-                        <TextView
-                            android:id="@+id/textView13"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Gonzalo Endara Crow"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView14"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="1936" />
-
-                        <TextView
-                            android:id="@+id/textView15"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Flor de Sol"
-                            android:textColor="@color/black" />
-
-                        <RatingBar
-                            android:id="@+id/ratingBar6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:isIndicator="true"
-                            android:numStars="5"
-                            android:progressTint="@color/estrellas"
-                            android:rating="4" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
@@ -333,7 +271,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView13"
+                            android:id="@+id/imagenPintura"
                             android:layout_width="310dp"
                             android:layout_height="240dp"
                             android:scaleType="fitXY"
@@ -352,7 +290,7 @@
                         android:paddingHorizontal="130px">
 
                         <TextView
-                            android:id="@+id/textView13"
+                            android:id="@+id/txt13"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Oswaldo Viteri"
