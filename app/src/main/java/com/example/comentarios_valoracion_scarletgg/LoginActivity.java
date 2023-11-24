@@ -28,6 +28,8 @@ public class LoginActivity extends AppCompatActivity {
 
         cuentaDB = new CuentaDB(this);
 
+
+
         //abrir ventana(actividad) de crear cuenta
         Button btn_crear_cuenta_login = findViewById(R.id.btn_crear_cuenta_login);
 

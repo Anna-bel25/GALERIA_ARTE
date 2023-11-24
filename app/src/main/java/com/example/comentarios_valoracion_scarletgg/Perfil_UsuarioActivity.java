@@ -33,12 +33,14 @@ public class Perfil_UsuarioActivity extends AppCompatActivity {
         // Asegúrate de que cuentaDB se inicialice correctamente
         cuentaDB = new CuentaDB(this);
 
+
+
         // Obtén el nombre de usuario del usuario que ha iniciado sesión
         String nombreUsuario = getIntent().getStringExtra("usuario");
         String contraseñausuario = getIntent().getStringExtra("contraseña");
 
         // Llama al método para obtener la cuenta del usuario
-        CuentaLogin usuarioActual = cuentaDB.obtenerCuentaPorCredenciales(nombreUsuario, contraseñausuario);
+        usuarioActual = cuentaDB.obtenerCuentaPorCredenciales(nombreUsuario, contraseñausuario);
 
         EditText edittext_usuario_perfil = findViewById(R.id.edittext_usuario_perfil);
         EditText edittext_contra_perfil = findViewById(R.id.edittext_contra_perfil);
@@ -51,13 +53,19 @@ public class Perfil_UsuarioActivity extends AppCompatActivity {
         //ImageView img_cuenta = findViewById(R.id.img_cuenta);
 
         // Obtener los datos del intent
+
         String usuario = getIntent().getStringExtra("usuario");
         String contraseña = getIntent().getStringExtra("contraseña");
-
         // Mostrar los datos en los EditText
-        txtView_usuario.setText(usuario);
-        edittext_usuario_perfil.setText(usuario);
-        edittext_contra_perfil.setText(contraseña);
+        if (usuarioActual != null) {
+            txtView_usuario.setText(usuarioActual.getUsuario());
+            edittext_usuario_perfil.setText(usuarioActual.getUsuario());
+            edittext_contra_perfil.setText(usuarioActual.getContraseña());
+        } else {
+            Log.e("PerfilActivity", "usuarioActual es nulo");
+        }
+
+
 
 
         // Habilitar la edición al hacer clic en la imagen

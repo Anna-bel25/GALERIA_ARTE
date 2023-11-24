@@ -66,20 +66,19 @@ public class CuentaDB extends SQLiteOpenHelper {
         return credencialesCorrectas;
     }
 
-    // verifica las credenciales en la base de datos
-    @SuppressLint("Range")
     public CuentaLogin obtenerCuentaPorCredenciales(String usuario, String contraseña) {
         SQLiteDatabase db = this.getReadableDatabase();
-        String[] columns = {"id", "usuario", "contraseña"};
-        String selection = "usuario = ? AND contraseña = ?";
 
-        // Verificar que tanto usuario como contraseña no sean nulos
-        if (usuario == null || contraseña == null) {
-            Log.e("CuentaDB", "Usuario o contraseña nulos");
+        // Verificar que tanto usuario como contraseña no sean nulos o vacíos
+        if (usuario == null || contraseña == null || usuario.isEmpty() || contraseña.isEmpty()) {
+            Log.e("CuentaDB", "Usuario o contraseña inválidos");
             return null;
         }
 
+        String[] columns = {"id", "usuario", "contraseña"};
+        String selection = "usuario = ? AND contraseña = ?";
         String[] selectionArgs = {usuario, contraseña};
+
         Cursor cursor = db.query("Cuentas", columns, selection, selectionArgs, null, null, null);
 
         CuentaLogin cuenta = null;

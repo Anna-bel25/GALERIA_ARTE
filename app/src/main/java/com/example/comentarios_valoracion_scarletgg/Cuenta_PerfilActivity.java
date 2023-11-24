@@ -61,7 +61,9 @@ public class Cuenta_PerfilActivity extends AppCompatActivity {
             }
         } else {
             // La cuenta actual no se encontró, realiza la acción correspondiente
-            Toast.makeText(this, "No se encontró la cuenta actual", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Cuenta eliminada exitosamente", Toast.LENGTH_SHORT).show();
+            finishAffinity();
+            System.exit(0);
         }
     }
 }
