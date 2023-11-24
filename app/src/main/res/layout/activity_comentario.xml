@@ -285,18 +285,16 @@
                         android:onClick="cmdBorrar"
                         android:text="Limpiar"
                         android:textColor="@color/white2" />
-                </LinearLayout>
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="11dp" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:paddingHorizontal="40px"
-                    android:paddingVertical="30px">
+                    android:paddingVertical="30px"
+                    android:visibility="invisible">
 
                     <Button
                         android:id="@+id/button"
@@ -311,96 +309,111 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="49dp" />
-
-                <View
-                    android:id="@+id/divider6"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_weight="1"
-                    android:background="?android:attr/listDivider" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:paddingHorizontal="40px"
-                    android:paddingVertical="30px">
+                    android:paddingHorizontal="40px">
 
-                    <LinearLayout
+                    <CheckBox
+                        android:id="@+id/chkPoliticaSeguridad"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <CheckBox
-                            android:id="@+id/chkPoliticaSeguridad"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/botones_busqueda"
-                            android:text="Acepta las políticas de seguridad de la aplicación"
-                            android:textColorHighlight="@color/estrellas"
-                            android:textColorLink="@color/white"
-                            app:checkedState="checked" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/cmdEnviar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:backgroundTint="@color/botones_busqueda"
-                            android:fontFamily="@font/aclonica"
-                            android:onClick="cmdEnviar"
-                            android:text="Enviar"
-                            android:textColor="@color/white2" />
-
-                        <Space
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1" />
-
-                        <Button
-                            android:id="@+id/cmdActualizar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:backgroundTint="@color/boton"
-                            android:fontFamily="@font/aclonica"
-                            android:onClick="actualizarComentario"
-                            android:text="Actualizar"
-                            android:textColor="@color/white2" />
-
-                        <Space
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1" />
-
-                        <Button
-                            android:id="@+id/cmdEliminar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:backgroundTint="@color/boton"
-                            android:fontFamily="@font/aclonica"
-                            android:onClick="eliminarComentario"
-                            android:text="Eliminar"
-                            android:textColor="@color/white2" />
-
-                    </LinearLayout>
-
+                        android:layout_height="33dp"
+                        android:text="Acepta las políticas de seguridad de la aplicación"
+                        android:textColorHighlight="@color/estrellas"
+                        android:textColorLink="@color/white"
+                        app:checkedState="checked" />
                 </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp" />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:layout_weight="1" />
+
+        <View
+            android:id="@+id/divider21"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_weight="1"
+            android:background="@color/fondo_comentar"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="40px"
+                android:paddingVertical="30px">
+
+                <Button
+                    android:id="@+id/cmdEnviar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/botones_busqueda"
+                    android:fontFamily="@font/aclonica"
+                    android:onClick="cmdEnviar"
+                    android:text="Enviar"
+                    android:textColor="@color/white2" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/cmdActualizar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/boton"
+                    android:fontFamily="@font/aclonica"
+                    android:onClick="actualizarComentario"
+                    android:text="Actualizar"
+                    android:textColor="@color/white2" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/cmdEliminar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/boton"
+                    android:fontFamily="@font/aclonica"
+                    android:onClick="eliminarComentario"
+                    android:text="Eliminar"
+                    android:textColor="@color/white2" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class ForoActivity extends AppCompatActivity {
     private LinearLayout lyComentario1, lyComentario2, lyComentario3,
             lyComentario4, lyComentario5, lyComentario6;
     //private List<LinearLayout> comentarios;
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void vercomenatio() {
         Toast.makeText(this, "Ha presionado sobre la ocpión Ver comentario", Toast.LENGTH_SHORT).show();
-        Intent n_ventana = new Intent(this, PrincipalActivity.class);
+        Intent n_ventana = new Intent(this, ForoActivity.class);
         startActivity(n_ventana);
     }
 

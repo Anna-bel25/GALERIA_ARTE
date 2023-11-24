@@ -34,7 +34,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class ComentarioActivity extends AppCompatActivity {
 
@@ -54,7 +57,7 @@ public class ComentarioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comentario);
 
-        EditText fecha_tnp = findViewById(R.id.txtFecha);
+        /*EditText fecha_tnp = findViewById(R.id.txtFecha);
         EditText nombre_tnp = findViewById(R.id.txtNombre);
         EditText comentario_tnp = findViewById(R.id.txtComentario);
         RatingBar valoracion_tnp = findViewById(R.id.rtValoracionNueva);
@@ -74,7 +77,7 @@ public class ComentarioActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e("Firebase", "Error al intentar guardar los datos", error.toException());
             }
-        });
+        });*/
 
         imageViewIcono = findViewById(R.id.imageView);
         btnCambiarIcono = findViewById(R.id.cmdCambiarIcono);
@@ -88,7 +91,7 @@ public class ComentarioActivity extends AppCompatActivity {
         });
     }
 
-    public void cmdGuardarFirebase(View v) {
+    /*public void cmdGuardarFirebase(View v) {
         EditText fecha_tnp = findViewById(R.id.txtFecha);
         EditText nombre_tnp = findViewById(R.id.txtNombre);
         EditText comentario_tnp = findViewById(R.id.txtComentario);
@@ -100,7 +103,7 @@ public class ComentarioActivity extends AppCompatActivity {
         ComentarioValoraciones.child("comentario").setValue(comentario_tnp.getText().toString());
         ComentarioValoraciones.child("valoracion").setValue(String.valueOf(valoracion_tnp.getRating()));
 
-    }
+    }*/
 
     private void cambiarIcono() {
         indiceActual = (indiceActual + 1) % imagenesIcono.length;
@@ -191,7 +194,7 @@ public class ComentarioActivity extends AppCompatActivity {
         fecha_tmp.setText("");
     }
     public void cmdCancelar(View v) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, ForoActivity.class);
         startActivity(intent);
     }
 
@@ -291,6 +294,7 @@ public class ComentarioActivity extends AppCompatActivity {
             ContentValues cv = new ContentValues();
             cv.put("rating", ratingB_t.getRating());
             cv.put("comentario", comentario_o.getText().toString());
+            cv.put("fecha", fecha_o.getText().toString());
 
             int rowsAffected = sqlBD.update("comentario", cv, "nombre = ?", new String[]{nombre_o.getText().toString()});
 
@@ -310,7 +314,6 @@ public class ComentarioActivity extends AppCompatActivity {
             }
         }
     }
-
 
 
     // Método para eliminar el registro
@@ -372,7 +375,7 @@ public class ComentarioActivity extends AppCompatActivity {
 
     public void vercomenatio() {
         Toast.makeText(this, "Ha presionado sobre la ocpión Ver comentario", Toast.LENGTH_SHORT).show();
-        Intent n_ventana = new Intent(this, PrincipalActivity.class);
+        Intent n_ventana = new Intent(this, ForoActivity.class);
         startActivity(n_ventana);
     }
 

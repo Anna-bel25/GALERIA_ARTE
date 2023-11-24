@@ -20,7 +20,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
     public void NuevoComentario (View v)
     {
-        Intent n_ventana = new Intent(this, MainActivity.class);
+        Intent n_ventana = new Intent(this, ForoActivity.class);
         startActivity(n_ventana);
         //Toast.makeText(v.getContext(), "Esta opción lo llevará a otra ventana", Toast.LENGTH_SHORT).show();
 
@@ -51,7 +51,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
     public void vercomenatio() {
         Toast.makeText(this, "Ha presionado sobre la ocpión Ver comentario", Toast.LENGTH_SHORT).show();
-        Intent n_ventana = new Intent(this, PrincipalActivity.class);
+        Intent n_ventana = new Intent(this, ForoActivity.class);
         startActivity(n_ventana);
     }
 

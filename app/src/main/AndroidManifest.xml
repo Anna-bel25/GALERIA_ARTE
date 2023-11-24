@@ -50,7 +50,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ForoActivity"
             android:exported="false" />
         <activity
             android:name=".ComentarioActivity"
