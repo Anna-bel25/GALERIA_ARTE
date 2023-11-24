@@ -1,4 +1,5 @@
 package com.example.comentarios_valoracion_scarletgg;
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -66,10 +67,18 @@ public class CuentaDB extends SQLiteOpenHelper {
     }
 
     // verifica las credenciales en la base de datos
+    @SuppressLint("Range")
     public CuentaLogin obtenerCuentaPorCredenciales(String usuario, String contraseña) {
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {"id", "usuario", "contraseña"};
         String selection = "usuario = ? AND contraseña = ?";
+
+        // Verificar que tanto usuario como contraseña no sean nulos
+        if (usuario == null || contraseña == null) {
+            Log.e("CuentaDB", "Usuario o contraseña nulos");
+            return null;
+        }
+
         String[] selectionArgs = {usuario, contraseña};
         Cursor cursor = db.query("Cuentas", columns, selection, selectionArgs, null, null, null);
 
@@ -92,6 +101,7 @@ public class CuentaDB extends SQLiteOpenHelper {
 
         return cuenta;
     }
+
 
 
 
