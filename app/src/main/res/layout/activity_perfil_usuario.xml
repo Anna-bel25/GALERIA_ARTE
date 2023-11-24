@@ -129,7 +129,7 @@
                                     android:background="@drawable/circle_background">
 
                                     <ImageView
-                                        android:id="@+id/img_icon3"
+                                        android:id="@+id/img_cuenta"
                                         android:layout_width="42dp"
                                         android:layout_height="44dp"
                                         android:foregroundGravity="center"
@@ -170,7 +170,7 @@
                                     android:background="@drawable/circle_background">
 
                                     <ImageView
-                                        android:id="@+id/seting"
+                                        android:id="@+id/img_estadisticas"
                                         android:layout_width="42dp"
                                         android:layout_height="44dp"
                                         android:foregroundGravity="center"
@@ -329,7 +329,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="24dp"
-                    android:backgroundTint="#FF7900"
+                    android:backgroundTint="#3a5a40"
                     android:fontFamily="@font/roboto_medium"
                     android:text="Editar Perfil"
                     android:textSize="16sp"

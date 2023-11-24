@@ -135,10 +135,9 @@ public class ComentarioActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    public void cmdEnviar(View v)
-    {
+    public void cmdEnviar(View v) {
         CheckBox ch_politica = (CheckBox) findViewById(R.id.chkPoliticaSeguridad);
-        if (ch_politica.isChecked()){
+        if (ch_politica.isChecked()) {
             String mensaje = "", estado = "", actcuenta = "", casaInt = "";
             EditText fecha_tmp = (EditText) findViewById(R.id.txtFecha);
             EditText nombre_tmp = (EditText) findViewById(R.id.txtNombre);
@@ -176,8 +175,7 @@ public class ComentarioActivity extends AppCompatActivity {
 
             Log.e("Registro", mensaje);
             Toast.makeText(v.getContext(), "Se han registrado correctamente", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             Toast.makeText(v.getContext(), "Debe aceptar las políticas de seguridad", Toast.LENGTH_SHORT).show();
         }
     }
@@ -193,6 +191,7 @@ public class ComentarioActivity extends AppCompatActivity {
         rtvaloracion_tmp.setRating(0);
         fecha_tmp.setText("");
     }
+
     public void cmdCancelar(View v) {
         Intent intent = new Intent(this, ForoActivity.class);
         startActivity(intent);
@@ -218,7 +217,6 @@ public class ComentarioActivity extends AppCompatActivity {
             }
         }
     }
-
 
 
     public void almacenarSD(String mensaje) {
@@ -279,7 +277,6 @@ public class ComentarioActivity extends AppCompatActivity {
     }
 
 
-
     // Método para actualizar el registro
     public void actualizarComentario(View v) {
         EditText nombre_o = findViewById(R.id.txtNombre);
@@ -336,8 +333,6 @@ public class ComentarioActivity extends AppCompatActivity {
     }
 
 
-
-
     // Método opcional para limpiar los campos después de eliminar
     private void limpiarCampos() {
         EditText nombre_o = findViewById(R.id.txtNombre);
@@ -351,21 +346,21 @@ public class ComentarioActivity extends AppCompatActivity {
 
 
     @Override
-    public boolean onCreateOptionsMenu (Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuPrincipal = getMenuInflater();
         menuPrincipal.inflate(R.menu.menu_principal, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected (MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.m_vercomenatario) {
             vercomenatio();
             return true;
         } else if (item.getItemId() == R.id.m_dejarcomentario) {
             dejarcomenatio();
             return true;
-        }else if (item.getItemId() == R.id.m_paginaprincipal) {
+        } else if (item.getItemId() == R.id.m_paginaprincipal) {
             paginaprincipal();
             return true;
         }

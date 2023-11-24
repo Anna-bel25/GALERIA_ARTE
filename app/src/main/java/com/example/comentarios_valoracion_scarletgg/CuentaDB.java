@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+
 import com.example.comentarios_valoracion_scarletgg.CuentaLogin;
 
 
@@ -93,27 +94,32 @@ public class CuentaDB extends SQLiteOpenHelper {
     }
 
 
-    // Método para obtener el usuario actual
-    public CuentaLogin obtenerUsuarioActual() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String[] columns = {"id", "usuario", "contraseña"};
-        Cursor cursor = db.query("Cuentas", columns, null, null, null, null, null);
 
-        CuentaLogin cuenta = null;
+    /*public CuentaLogin EditarUsuario() {
+        // Supongamos que ya tienes una instancia de CuentaDB llamada cuentaDB
 
-        if (cursor.moveToFirst()) {
-            cuenta = new CuentaLogin();
-            cuenta.setId(cursor.getInt(cursor.getColumnIndex("id")));
-            cuenta.setUsuario(cursor.getString(cursor.getColumnIndex("usuario")));
-            cuenta.setContraseña(cursor.getString(cursor.getColumnIndex("contraseña")));
-        }else {
-            Log.e("CuentaDB", "No se encontró ningún usuario en la base de datos");
+        // Obtén la cuenta actual
+        CuentaLogin cuentaActual = cuentaDB.obtenerUsuarioActual();
+
+        // Verifica si se encontró una cuenta
+        if (cuentaActual != null) {
+            // Modifica el usuario y la contraseña según sea necesario
+            cuentaActual.setUsuario("nuevoUsuario");
+            cuentaActual.setContraseña("nuevaContraseña");
+
+            // Actualiza la cuenta en la base de datos
+            int filasActualizadas = cuentaDB.actualizarCuenta(cuentaActual);
+
+            if (filasActualizadas > 0) {
+                Log.d("CuentaDB", "Cuenta actualizada exitosamente");
+            } else {
+                Log.e("CuentaDB", "Error al actualizar la cuenta");
+            }
+        } else {
+            Log.e("CuentaDB", "No se encontró una cuenta para actualizar");
         }
 
-        cursor.close();
-
-        return cuenta;
-    }
+    }*/
 
     // Método para actualizar la cuenta en la base de datos
    /* public int actualizarCuenta(CuentaLogin cuenta) {
@@ -138,6 +144,18 @@ public class CuentaDB extends SQLiteOpenHelper {
         } catch (Exception e) {
             e.printStackTrace();
             Log.e("CuentaDB", "Excepción al actualizar cuenta", e);
+            return -1; // O algún otro valor que indique un error
+        }
+    }
+
+    // Método para eliminar una cuenta por su ID
+    public int eliminarCuentaPorId(int id) {
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            return db.delete("Cuentas", "id = ?", new String[]{String.valueOf(id)});
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("CuentaDB", "Excepción al eliminar cuenta por ID", e);
             return -1; // O algún otro valor que indique un error
         }
     }
