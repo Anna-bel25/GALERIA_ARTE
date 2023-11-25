@@ -66,6 +66,7 @@ public class CuentaDB extends SQLiteOpenHelper {
         return credencialesCorrectas;
     }
 
+    @SuppressLint("Range")
     public CuentaLogin obtenerCuentaPorCredenciales(String usuario, String contraseña) {
         SQLiteDatabase db = this.getReadableDatabase();
 
